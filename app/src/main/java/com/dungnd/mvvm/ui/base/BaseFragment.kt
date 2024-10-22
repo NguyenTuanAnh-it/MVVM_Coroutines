@@ -38,4 +38,12 @@ abstract class BaseFragment<T : ViewDataBinding, M : BaseViewModel> : DaggerFrag
         viewModel = ViewModelProvider(this, viewModelFactory)[viewModelClass()]
         initView()
     }
+
+    fun showLoading(){
+        (activity as? BaseActivity<*, *>)?.showLoading()
+    }
+
+    fun hiddenLoading() {
+        (activity as? BaseActivity<*, *>)?.hiddenLoading()
+    }
 }
